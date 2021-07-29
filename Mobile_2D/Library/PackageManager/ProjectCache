@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637630271537618352
-    m_Hash: 3488104385
+      ticks: 637629701560000000
+    m_Hash: 1755350565
   m_LockFileStatus:
     m_FilePath: C:/Users/pixels-007/Desktop/JH_Unity/Mobile_2D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637630271537638352
-    m_Hash: 2463729786
+      ticks: 637629701560000000
+    m_Hash: 1487807332
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -844,7 +844,7 @@ m_PackageAssets:
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/com.unity.test-framework.git
+        url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: f04391d9987f4a534f886a9638b011d53e5871d8
         path: 
     - packageId: com.unity.textmeshpro@3.0.1

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
     public static bool spawn;
-    //원래는 public bool spawn;
 
     [SerializeField]
     private GameObject bee_prefab;
@@ -21,26 +19,28 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
-        if (Time_Left.game_time < 0f)
+        if (Time_Left.game_time < 0f)    //if (time_left.game_time < 0f) 
+        {
             Time.timeScale = 0f;
+            spawn = false;  //전역변수 가져옴
+        }
     }
 
     IEnumerator Target_Spawn()
     {
-        if (spawn && (Time_Left.game_time>0))
+        if (spawn && (Time_Left.game_time>0))    //if (spawn && (time_left.game_time>0))
         {
             float x = Random.Range(-1.5f, 1.5f);
             float y = Random.Range(-2f, 2f);
             Vector3 spawn_position = new Vector3(x, y, 0);
             Instantiate(bee_prefab, spawn_position, Quaternion.Euler(0, 0, 0));
-            //타겟의 속도,회전 방향
         }
         yield return new WaitForSeconds(1f);
         StartCoroutine(Target_Spawn());
     }
     IEnumerator Hostile_Spawn()
     {
-        if (spawn && (Time_Left.game_time > 0))
+        if (spawn && (Time_Left.game_time > 0))        //if (spawn && (time_left.game_time>0))
         {
             float x = Random.Range(-1.5f, 1.5f);
             float y = Random.Range(-2f, 2f);

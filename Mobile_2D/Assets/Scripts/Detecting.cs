@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class Detecting : MonoBehaviour
 {
-    //public Spawner spawner;
-    //public Time_Left time_left;
-
-    public Text Score_Text;
+    [SerializeField]
+    private Text Score_Text;
     private int Score;
+
     void touched()
     {
         if (Input.GetMouseButtonUp(0))
@@ -39,14 +38,10 @@ public class Detecting : MonoBehaviour
 
     void Update()
     {
-        //게임 재개 버튼 누르면 주변 타겟을 잡게 됨->수정 필요
-        if (Time_Left.game_time > 0)
+        if(Spawner.spawn)
         {
             touched();
-            if (Spawner.spawn)  //if(spawner.spawn)
-                Score_Text.text = "SCORE: " + Score.ToString();
+            Score_Text.text = "SCORE: " + Score.ToString();
         }
-        else
-            Score_Text.gameObject.SetActive(false);
     }
 }
