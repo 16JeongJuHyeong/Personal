@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
+
     [SerializeField]
     private GameObject Pause_UI;
 
@@ -16,6 +17,9 @@ public class Pause : MonoBehaviour
     {
         GetComponent<Button>().interactable = false;
         Pause_UI.SetActive(true);
-        Time.timeScale = 0f;
+        TimeManager.time_flow = 0;
+        Spawner.spawn = false;  //타임매니저의 타임플로우를 Spawner에서 코루틴 함수에 사용해도 되긴 함
+        //Time.timeScale = 0f;
+        //전체 timescale말고 timemanager의 timescale 사용
     }
 }

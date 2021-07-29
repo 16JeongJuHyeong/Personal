@@ -18,10 +18,12 @@ public class Time_Left : MonoBehaviour
 
     void Update()
     {
-        if(Spawner.spawn)
+        if(Spawner.spawn && TimeManager.time_flow>0)
         {
             game_time -= Time.deltaTime;
             time.text = "Time: " + game_time.ToString("N0") + "sec";
         }
+        if (game_time < 0)
+            TimeManager.time_flow = 0;
     }
 }

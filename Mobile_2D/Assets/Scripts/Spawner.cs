@@ -13,22 +13,22 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        spawn = false;
+        Spawner.spawn = false;
         StartCoroutine(Target_Spawn());
         StartCoroutine(Hostile_Spawn());
     }
     void Update()
     {
-        if (Time_Left.game_time < 0f)    //if (time_left.game_time < 0f) 
+        if (Time_Left.game_time < 0f)
         {
             Time.timeScale = 0f;
-            spawn = false;  //전역변수 가져옴
+            spawn = false;
         }
     }
 
     IEnumerator Target_Spawn()
     {
-        if (spawn && (Time_Left.game_time>0))    //if (spawn && (time_left.game_time>0))
+        if (spawn && (Time_Left.game_time>0)) 
         {
             float x = Random.Range(-1.5f, 1.5f);
             float y = Random.Range(-2f, 2f);
@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator Hostile_Spawn()
     {
-        if (spawn && (Time_Left.game_time > 0))        //if (spawn && (time_left.game_time>0))
+        if (spawn && (Time_Left.game_time > 0))
         {
             float x = Random.Range(-1.5f, 1.5f);
             float y = Random.Range(-2f, 2f);

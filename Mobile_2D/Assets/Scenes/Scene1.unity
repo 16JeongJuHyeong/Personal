@@ -454,6 +454,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &674295158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674295160}
+  - component: {fileID: 674295159}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &674295159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674295158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428239953c4097443b46c24d883c3da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &674295160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674295158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3696163, y: -0.23373678, z: -2.1976595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954094255
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +510,7 @@ GameObject:
   - component: {fileID: 954094258}
   - component: {fileID: 954094257}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,6 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2f70947a3e1104f9c72067479c7fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 2108370967}
   Pause_Button: {fileID: 1704649724}
 --- !u!1 &1726707303
 GameObject:
@@ -1487,7 +1531,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 362d5eac593ff8f4299e0ffe2ff6ef75, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1544,3 +1588,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a7e391c4d149b44bd4952e8e42d35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count_ready: 0

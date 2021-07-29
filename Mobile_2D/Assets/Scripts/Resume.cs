@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Resume : MonoBehaviour
 {
+    public Countdown timer;
     [SerializeField]
     private GameObject Pause_Button;
 
@@ -12,6 +13,7 @@ public class Resume : MonoBehaviour
     {
         Pause_Button.GetComponent<Button>().interactable = true;
         this.transform.parent.gameObject.SetActive(false);
-        Time.timeScale = 1f;
+        timer.gameObject.SetActive(true);
+        timer.count_ready = true;
     }
 }
