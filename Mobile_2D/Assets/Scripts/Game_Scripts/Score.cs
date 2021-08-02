@@ -18,9 +18,9 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if (Spawner.spawn || Spawner.IsBonus)
+        if ((Time_Left.game_time > 0) && !Pause.IsPause) //if (Spawner.spawn || Spawner.IsBonus)
             Score_Text.text = "SCORE: " + score.ToString();
-        else if(Time_Left.game_time < 0)
+        else if((Time_Left.game_time < 0))
             this.gameObject.SetActive(false);
     }
 }

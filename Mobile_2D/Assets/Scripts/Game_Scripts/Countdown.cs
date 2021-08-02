@@ -28,12 +28,13 @@ public class Countdown : MonoBehaviour
         anim_time -= Time.deltaTime;
         if (anim_time < 0)
         {
+            Pause.IsPause = false;
             count_ready = false;
-            Spawner.spawn = true;
             this.gameObject.SetActive(false);
-            TimeManager.time_flow = 1;
             anim_time = 3f;
             Pause_Button.GetComponent<Button>().interactable = true;
+            if (!Spawner.IsBonus)
+                TimeManager.time_flow = 1;
         }
     }
 }

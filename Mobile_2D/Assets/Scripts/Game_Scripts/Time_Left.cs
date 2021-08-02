@@ -14,15 +14,17 @@ public class Time_Left : MonoBehaviour
     void Start()
     {
         Over_UI.SetActive(false);
-        game_time = 60f;
+        game_time = 20f;
     }
 
     void Update()
     {
-        if(Spawner.spawn && TimeManager.time_flow>0)
+        if (!Pause.IsPause && TimeManager.time_flow>0) //if (Spawner.spawn && TimeManager.time_flow>0) 
         {
             game_time -= Time.deltaTime;
             time.text = "Time: " + game_time.ToString("N0") + "sec";
+            //소수점 제거시키는 방법: N(x) - x자리까지 소수점 출력
+
         }
         if (game_time < 0)
         {

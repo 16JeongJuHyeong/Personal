@@ -15,22 +15,24 @@ public class Detecting : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(click_point, Vector2.zero);
             if (hit.collider != null)
             {
-                if (hit.collider.tag == "Target" && !Spawner.IsBonus)
+                if (hit.collider.tag == "Target" && !Spawner.IsBonus && !Pause.IsPause)  //보너스 타임엔 건드릴 수 없음
                 {
                     Destroy(hit.collider.gameObject);
                     score.score += 10;
                 }
-                else if (hit.collider.tag == "Hostile" && !Spawner.IsBonus)
+                else if (hit.collider.tag == "Hostile" && !Spawner.IsBonus && !Pause.IsPause)  //보너스 타임엔 건드릴 수 없음
                 {
                     Destroy(hit.collider.gameObject);
                     score.score -= 30;
                 }
-                else if(hit.collider.tag == "Special")
+                else if(hit.collider.tag == "Special" && !Pause.IsPause)  //정지시간만 아니면 건드릴 수 있음
                 {
+                    //도망가는 타겟 기능 삽입
+
                     Destroy(hit.collider.gameObject);
                     StartCoroutine( Before_Bonus() );
                 }
-                else if(hit.collider.tag == "Bonus_Target")
+                else if(hit.collider.tag == "Bonus_Target" && !Pause.IsPause)  // 정지시간 아니면 건드릴 수 있지만, 보너스 타임 끝나곤 못 건드리길 원하면 조건문에 IsBonus 넣기
                 {
                     Destroy(hit.collider.gameObject);
                     score.score += 10;
@@ -42,18 +44,12 @@ public class Detecting : MonoBehaviour
     IEnumerator Before_Bonus()
     {
         TimeManager.time_flow = 0;
-        Spawner.spawn = false;
         yield return new WaitForSeconds(1f);
         Spawner.IsBonus = true;
-        yield return new WaitForSeconds(7f);
-        Spawner.IsBonus = false;
-        TimeManager.time_flow = 1;
-        Spawner.spawn = true;
     }
 
     void Update()
     {
-        if(Spawner.spawn || Spawner.IsBonus)
-            touched();
+        touched();
     }
 }
