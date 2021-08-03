@@ -25,13 +25,6 @@ public class Detecting : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     score.score -= 30;
                 }
-                else if(hit.collider.tag == "Special" && !Pause.IsPause)  //정지시간만 아니면 건드릴 수 있음
-                {
-                    //도망가는 타겟 기능 삽입
-
-                    Destroy(hit.collider.gameObject);
-                    StartCoroutine( Before_Bonus() );
-                }
                 else if(hit.collider.tag == "Bonus_Target" && !Pause.IsPause)  // 정지시간 아니면 건드릴 수 있지만, 보너스 타임 끝나곤 못 건드리길 원하면 조건문에 IsBonus 넣기
                 {
                     Destroy(hit.collider.gameObject);
