@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Target
   - Hostile
+  - Special
+  - Bonus_Target
   layers:
   - Default
   - TransparentFX
