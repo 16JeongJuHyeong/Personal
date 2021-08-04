@@ -14,7 +14,7 @@ public class Time_Left : MonoBehaviour
     void Start()
     {
         Over_UI.SetActive(false);
-        game_time = 20f;
+        game_time = 120f;
     }
 
     void Update()

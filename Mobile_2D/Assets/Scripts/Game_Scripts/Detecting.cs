@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Detecting : MonoBehaviour
 {
     public Score score;
-
     void touched()
     {
         if (Input.GetMouseButtonUp(0))
@@ -15,7 +14,12 @@ public class Detecting : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(click_point, Vector2.zero);
             if (hit.collider != null)
             {
-                if (hit.collider.tag == "Target" && !Spawner.IsBonus && !Pause.IsPause)  //보너스 타임엔 건드릴 수 없음
+                if(hit.collider.tag == "Special" && Special_Target_action2.InCorner)
+                {
+                    Destroy(hit.collider.gameObject.transform.parent.gameObject);
+                    StartCoroutine(Before_Bonus());
+                }
+                else if (hit.collider.tag == "Target" && !Spawner.IsBonus && !Pause.IsPause)  //보너스 타임엔 건드릴 수 없음
                 {
                     Destroy(hit.collider.gameObject);
                     score.score += 10;
@@ -37,7 +41,7 @@ public class Detecting : MonoBehaviour
     IEnumerator Before_Bonus()
     {
         TimeManager.time_flow = 0;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Spawner.IsBonus = true;
     }
 

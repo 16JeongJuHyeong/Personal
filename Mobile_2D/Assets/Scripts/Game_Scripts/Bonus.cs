@@ -19,7 +19,7 @@ public class Bonus : MonoBehaviour
     void Update()
     {
         if (target_body.isVisible)
-            transform.position = transform.position + new Vector3(x_direction, y_direction, 0).normalized * 0.004f * (!Pause.IsPause ? 1:0);
+            transform.position = transform.position + new Vector3(x_direction, y_direction, 0).normalized * 0.02f * (!Pause.IsPause ? 1:0);
         // 일시정지 됐을 때 보너스가 안 움직이게 설정
         else
             Destroy(this.gameObject);
