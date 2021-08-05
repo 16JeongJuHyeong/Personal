@@ -6,15 +6,17 @@ using UnityEngine.UI;
 public class Detecting : MonoBehaviour
 {
     public Score score;
-    void touched()
+    void touch()
     {
         if (Input.GetMouseButtonUp(0))
         {
             Vector2 click_point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //*좌표계엔 Screen 좌표, World좌표 , 00  등이 있음.
+            //*카메라는 기본적으로 Screen좌표기 때문에 World좌표를 사용하는 객체의 위치에 맞게 변환
             RaycastHit2D hit = Physics2D.Raycast(click_point, Vector2.zero);
             if (hit.collider != null)
             {
-                if(hit.collider.tag == "Special" && Special_Target_action2.InCorner)
+                if(hit.collider.tag == "Special" && Special_Target_Action.InCorner)
                 {
                     Destroy(hit.collider.gameObject.transform.parent.gameObject);
                     StartCoroutine(Before_Bonus());
@@ -38,7 +40,7 @@ public class Detecting : MonoBehaviour
         }
     }
 
-    IEnumerator Before_Bonus()
+    IEnumerator Before_Bonus() //보너스 시작하기 전 잠깐 딜레이 + 애니메이션을 위한 딜레이
     {
         TimeManager.time_flow = 0;
         yield return new WaitForSeconds(2f);
@@ -47,6 +49,6 @@ public class Detecting : MonoBehaviour
 
     void Update()
     {
-        touched();
+        touch();
     }
 }
