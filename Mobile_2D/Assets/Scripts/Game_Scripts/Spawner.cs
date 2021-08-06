@@ -21,9 +21,10 @@ public class Spawner : MonoBehaviour
         Special_trig = true;
         IsBonus = false;
         StartCoroutine(Target_Spawn());
-        StartCoroutine(Hostile_Spawn());
+        StartCoroutine(Hostile_Spawn());    
         StartCoroutine(Bonus_Spawn());
     }
+
     void Update()
     {
         if (Time_Left.game_time < 30f && Special_trig)
@@ -39,8 +40,8 @@ public class Spawner : MonoBehaviour
     {
         if ((TimeManager.time_flow > 0) && !Pause.IsPause)   //if (spawn && (TimeManager.time_flow > 0))
         {
-            float x = Random.Range(-1.5f, 1.5f);
-            float y = Random.Range(-2f, 2f);
+            float x = Random.Range(-2.5f, 2.5f);
+            float y = Random.Range(-4f, 4f);
             Vector3 spawn_position = new Vector3(x, y, 0);
             Instantiate(bee_prefab, spawn_position, Quaternion.Euler(0, 0, 0));  //* 프리팹 복사본(clone) 생성. (복제할 프리팹, 복제 위치, 복제 rotation)
         }
@@ -48,12 +49,12 @@ public class Spawner : MonoBehaviour
         StartCoroutine(Target_Spawn());
     }
 
-    IEnumerator Hostile_Spawn()
+    IEnumerator Hostile_Spawn()  
     {
         if ((TimeManager.time_flow > 0) && !Pause.IsPause )  //if (spawn && (TimeManager.time_flow > 0))
         {
-            float x = Random.Range(-1.5f, 1.5f);
-            float y = Random.Range(-2f, 2f);
+            float x = Random.Range(-2.5f, 2.5f);
+            float y = Random.Range(-4f, 4f);
             Vector3 spawn_position = new Vector3(x, y, 0);
             Instantiate(hostile_prefab, spawn_position, Quaternion.Euler(0, 0, 0));
         }
@@ -65,8 +66,8 @@ public class Spawner : MonoBehaviour
     {
         if (IsBonus && !Pause.IsPause)
         {
-            float x = Random.Range(-1.5f, 1.5f);
-            float y = Random.Range(-2f, 2f);
+            float x = Random.Range(-2.5f, 2.5f);
+            float y = Random.Range(-4f, 4f);
             Vector3 spawn_position = new Vector3(x, y, 0);
             Instantiate(bonus_prefab, spawn_position, Quaternion.Euler(0, 0, 0));
         }

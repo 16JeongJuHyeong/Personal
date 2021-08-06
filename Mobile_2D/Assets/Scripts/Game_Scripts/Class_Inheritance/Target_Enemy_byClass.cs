@@ -9,7 +9,7 @@ public class Target_Enemy_byClass : Target_byClass //Target_byClass 상속. 속�
         if (Time_Left.game_time > 0)
         {
             if (target_body.isVisible) // 에너미 객체. 시간에 따라 속도 증가
-                transform.position = transform.position + new Vector3(x_direction, y_direction, 0).normalized * Mathf.Clamp((30 / (Time_Left.game_time + 1)), 0.5f, 3f) * 0.02f * (!Pause.IsPause ? 1 : 0) * TimeManager.time_flow;
+                transform.position = transform.position + new Vector3(x_direction, y_direction, 0).normalized * Mathf.Clamp((30 / (Time_Left.game_time + 1)), 0.5f, 3f) * 0.01f * (!Pause.IsPause ? 1 : 0) * TimeManager.time_flow;
             else
                 Destroy(this.gameObject);
         }
