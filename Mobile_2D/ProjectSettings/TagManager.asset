@@ -8,6 +8,10 @@ TagManager:
   - Hostile
   - Special
   - Bonus_Target
+  - Top
+  - Bottom
+  - Right
+  - Left
   layers:
   - Default
   - TransparentFX
