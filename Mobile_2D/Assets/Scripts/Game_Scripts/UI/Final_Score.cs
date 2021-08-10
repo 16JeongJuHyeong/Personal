@@ -7,11 +7,10 @@ public class Final_Score : MonoBehaviour
 {
     [SerializeField]
     private Text Final_Score_Text;
-
     public Score score;
 
     void Update()
     {
-        Final_Score_Text.text = score.score.ToString();
+        Final_Score_Text.text = "SCORE: " + score.score.ToString();
     }
 }

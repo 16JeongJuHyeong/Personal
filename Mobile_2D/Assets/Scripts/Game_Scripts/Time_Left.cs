@@ -19,6 +19,7 @@ public class Time_Left : MonoBehaviour
         Over_UI.SetActive(false);
         game_time = 60f;
     }
+
     void Update()
     {
         if (!Pause.IsPause && TimeManager.time_flow>0)

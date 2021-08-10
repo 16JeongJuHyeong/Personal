@@ -8,33 +8,22 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     private GameObject Pause_Button;
 
-    private float anim_time;
-    public bool count_ready;
+    private Animator animator;
 
     void Start()
     {
-        anim_time = 3f;
-        count_ready = true;
+        animator = GetComponent<Animator>();
+        animator.SetBool("Counting", true);
     }
 
-    void Update()
+    void Count_Over()
     {
-        if (count_ready)
-            count_check();
+        animator.SetBool("Counting", false);
+        Pause_Button.GetComponent<Button>().interactable = true;
+        Pause.IsPause = false;
+        if (!Spawner.IsBonus)
+            TimeManager.time_flow = 1;
+        this.gameObject.SetActive(false);
     }
-
-    void count_check()
-    {
-        anim_time -= Time.deltaTime;
-        if (anim_time < 0)
-        {
-            Pause.IsPause = false;
-            count_ready = false;
-            this.gameObject.SetActive(false);
-            anim_time = 3f;
-            Pause_Button.GetComponent<Button>().interactable = true;
-            if (!Spawner.IsBonus)
-                TimeManager.time_flow = 1;
-        }
-    }
+    //애니메이션 이벤트를 사용하면 업데이트로 시간 확인할 필요 없이 알아서 함수를 사용해줌
 }

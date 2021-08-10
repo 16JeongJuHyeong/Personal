@@ -18,7 +18,7 @@ public class Special_Target_Action : MonoBehaviour //일반적으로 MonoBehavio
     {
         InCorner = false;  // 구석에선 못 도망
         velo = Vector3.zero;
-        Des = transform.position;
+        Des = transform.position; //처음엔 움직일 거 없으니까 지금 위치
         Left_Top_End = GameObject.Find("Left_Top_End");
         Left_Bottom_End = GameObject.Find("Left_Bottom_End");
         Right_Top_End = GameObject.Find("Right_Top_End");
@@ -27,23 +27,15 @@ public class Special_Target_Action : MonoBehaviour //일반적으로 MonoBehavio
 
     void Update()
     {
-        if ((transform.position - Left_Top_End.transform.position).magnitude < 2f)
-            InCorner = true;
-        else if ((transform.position - Left_Bottom_End.transform.position).magnitude < 2f)
-            InCorner = true;
-        else if ((transform.position - Right_Top_End.transform.position).magnitude < 2f)
-            InCorner = true;
-        else if ((transform.position - Right_Bottom_End.transform.position).magnitude < 2f)
-            InCorner = true;
+        if ((transform.position - Left_Top_End.transform.position).magnitude < 2f)  InCorner = true;
+        else if ((transform.position - Left_Bottom_End.transform.position).magnitude < 2f)  InCorner = true;
+        else if ((transform.position - Right_Top_End.transform.position).magnitude < 2f)    InCorner = true;
+        else if ((transform.position - Right_Bottom_End.transform.position).magnitude < 2f) InCorner = true;
         if (!Pause.IsPause)
-        {
-            if (!Mathf.Approximately(transform.position.magnitude, Des.magnitude))
+            if (!Mathf.Approximately(transform.position.magnitude, Des.magnitude)) //현재 위치와 목적지 거리 비교-비슷해질 때까지 SmoothDamp 이동
                 transform.position = Vector3.SmoothDamp(transform.position, Des, ref velo, 0.2f);
-        }
     }
 }
-
-
 
 
 // *velocity(3D 작업에서도), SmoothDamp, Lerp(아마도) 등은 완벽하게 목적지로 도착하지 않음

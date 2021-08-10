@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Detecting : MonoBehaviour
 {
     public Score score;
+
     void touch()
     {
         if (Input.GetMouseButtonUp(0))

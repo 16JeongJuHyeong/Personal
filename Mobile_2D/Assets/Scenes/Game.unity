@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -908,11 +908,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8df77d3c24fc64c9739d9dce2e8f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bee_prefab: {fileID: 9043704828572227908, guid: 98812d42da5d1b440aaa2861db3845c2, type: 3}
+  target_prefab: {fileID: 9043704828572227908, guid: 98812d42da5d1b440aaa2861db3845c2, type: 3}
   hostile_prefab: {fileID: 5995720351325674807, guid: f9b5e0a3288fcaa49935033988e6d584, type: 3}
   special_prefab: {fileID: 812162788637605712, guid: d2b1a18b2c16522409265a925f4c85e2, type: 3}
   bonus_prefab: {fileID: 7932632494628014202, guid: 76b2e09341bdf7b4c904d4fd519092c4, type: 3}
@@ -2323,7 +2323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2f70947a3e1104f9c72067479c7fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 2108370967}
+  Timer: {fileID: 2108370967}
 --- !u!1 &1726707303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428239953c4097443b46c24d883c3da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hostile_animator: {fileID: 1938051344590892004, guid: f9b5e0a3288fcaa49935033988e6d584, type: 3}
 --- !u!212 &2021376162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3126,4 +3127,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pause_Button: {fileID: 1704649724}
-  count_ready: 0

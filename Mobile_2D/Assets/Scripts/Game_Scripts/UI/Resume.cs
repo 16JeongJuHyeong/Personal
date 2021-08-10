@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class Resume : MonoBehaviour
 {
-    public Countdown timer;
-
+    public Countdown Timer;
     public void Set_Resume()
     {
         this.transform.parent.gameObject.SetActive(false);
-        timer.gameObject.SetActive(true);
-        timer.count_ready = true;
+        Timer.gameObject.SetActive(true);
     }
 }
