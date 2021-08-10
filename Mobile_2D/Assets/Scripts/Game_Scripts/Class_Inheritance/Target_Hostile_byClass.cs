@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Target_Hostile_byClass : Target_byClass
 {
+
     void Update()
     {
         if (Time_Left.game_time > 0)
