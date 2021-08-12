@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637640705389836675
+      ticks: 637640705400000000
     m_Hash: 3488104385
   m_LockFileStatus:
     m_FilePath: C:/Users/pixels-007/Desktop/JH_Unity/Mobile_2D/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637640705389836675
+      ticks: 637640705400000000
     m_Hash: 2463729786
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

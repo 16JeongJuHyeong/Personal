@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
     private GameObject special_prefab;
     [SerializeField]
     private GameObject bonus_prefab;
+    [SerializeField]
+    private GameObject blackhole_prefab;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class Spawner : MonoBehaviour
         if (Time_Left.game_time < 30f && Special_trig)
         {
             Instantiate(special_prefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
+            Instantiate(blackhole_prefab, new Vector3(-4, -8, 0), Quaternion.Euler(0, 0, 0));
             Special_trig = false;
         }
         if (TimeManager.time_flow && !Pause.IsPause)

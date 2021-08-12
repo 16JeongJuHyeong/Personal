@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Left_Top_action : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "End_Point")
-        {
-            Special_Target_Action.InCorner = true;
-            Special_Images.Image_Index = 1;
-        }
-    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Left")
@@ -21,9 +13,10 @@ public class Left_Top_action : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (Special_Target_Action.InCorner)
-            StartCoroutine(this.gameObject.transform.parent.GetComponent<Special_Target_Action>().EVENT_());
-        else if (!Pause.IsPause)
+        if (!Pause.IsPause && TimeManager.time_flow)
+        {
+            Special_Target_Action.Image_Index = Random.Range(2, 4);
             Special_Target_Action.Des = transform.parent.gameObject.transform.position + new Vector3(1.5f, -1.5f, 0);
+        }
     }
 }
