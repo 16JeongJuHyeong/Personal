@@ -7,7 +7,7 @@ public class Replay : MonoBehaviour
 {
     public void ReStart()
     {
-        TimeManager.time_flow = 1;
+        TimeManager.time_flow = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //*SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex): 새로 불러오기
     }

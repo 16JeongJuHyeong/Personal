@@ -12,6 +12,7 @@ TagManager:
   - Bottom
   - Right
   - Left
+  - End_Point
   layers:
   - Default
   - TransparentFX

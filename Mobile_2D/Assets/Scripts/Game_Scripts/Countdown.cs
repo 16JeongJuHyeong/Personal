@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour
         Pause_Button.GetComponent<Button>().interactable = true;
         Pause.IsPause = false;
         if (!Spawner.IsBonus)
-            TimeManager.time_flow = 1;
+            TimeManager.time_flow = true;
         this.gameObject.SetActive(false);
     }
     //애니메이션 이벤트를 사용하면 업데이트로 시간 확인할 필요 없이 알아서 함수를 사용해줌

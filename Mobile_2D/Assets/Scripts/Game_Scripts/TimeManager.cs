@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public static int time_flow;
+    public static bool time_flow;
     private float bonus_time_left;
 
     void Awake()
     {
-        time_flow = 1;
+        time_flow = true;
         bonus_time_left = 7f;
     }
 
@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
             if (bonus_time_left < 0f)
             {
                 Spawner.IsBonus = false;
-                time_flow = 1;
+                time_flow = true;
             }
         }
     }

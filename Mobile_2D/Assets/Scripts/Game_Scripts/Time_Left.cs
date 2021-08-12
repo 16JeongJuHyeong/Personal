@@ -22,7 +22,7 @@ public class Time_Left : MonoBehaviour
 
     void Update()
     {
-        if (!Pause.IsPause && TimeManager.time_flow>0)
+        if (!Pause.IsPause && TimeManager.time_flow)
         {
             game_time -= Time.deltaTime;
             time.text = "Time: " + game_time.ToString("N0") + "sec";
@@ -32,7 +32,7 @@ public class Time_Left : MonoBehaviour
         }
         if (game_time < 0)
         {
-            TimeManager.time_flow = 0;
+            TimeManager.time_flow = false;
             Over_UI.SetActive(true);
             this.gameObject.SetActive(false);
         }

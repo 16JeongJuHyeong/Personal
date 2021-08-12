@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     private bool Special_trig;
     private float hostile_spawn_time;
     public static bool IsBonus;
+
     [SerializeField]
     private GameObject target_prefab;
     [SerializeField]
@@ -28,13 +29,13 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         if (Time_Left.game_time < 0f)
-            TimeManager.time_flow = 0;
+            TimeManager.time_flow = false;
         if (Time_Left.game_time < 30f && Special_trig)
         {
             Instantiate(special_prefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
             Special_trig = false;
         }
-        if ((TimeManager.time_flow > 0) && !Pause.IsPause)
+        if (TimeManager.time_flow && !Pause.IsPause)
             hostile_Spawn();
     }
 
@@ -52,21 +53,20 @@ public class Spawner : MonoBehaviour
     }
     //코루틴의 WaitForSeconds가 게임에 구현한 일시정지에 효과가 없어 Update함수로 처리
 
-    
     IEnumerator Target_Spawn()
     {
-        if ((TimeManager.time_flow > 0) && !Pause.IsPause)   //if (spawn && (TimeManager.time_flow > 0))
+        if (TimeManager.time_flow && !Pause.IsPause)
         {
             float x = Random.Range(-2.5f, 2.5f);
             float y = Random.Range(-4f, 4f);
             Vector3 spawn_position = new Vector3(x, y, 0);
-            Instantiate(target_prefab, spawn_position, Quaternion.Euler(0, 0, 0));  //* 프리팹 복사본(clone) 생성. (복제할 프리팹, 복제 위치, 복제 rotation)
+            Instantiate(target_prefab, spawn_position, Quaternion.Euler(0, 0, 0));
         }
         yield return new WaitForSeconds(1f);
         StartCoroutine(Target_Spawn());
     }
 
-    IEnumerator Bonus_Spawn()  //업데이트 함수로 spawn 구현 시 너무 많이 소환. Default는 초당 10개
+    IEnumerator Bonus_Spawn()
     {
         if (IsBonus && !Pause.IsPause)
         {
