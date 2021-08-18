@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Replay : MonoBehaviour
 {
+    [SerializeField] private AudioSource UI_Click_Sound;
     public void ReStart()
     {
-        TimeManager.time_flow = 1;
+        UI_Click_Sound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //*SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex): 새로 불러오기
     }

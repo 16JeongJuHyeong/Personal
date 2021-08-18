@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField]
-    private Text Score_Text;
-
+    [SerializeField] private Text Score_Text;
+    [SerializeField] private Final_Score Final_score;
     public int score;
     
     void Start()
@@ -17,9 +16,12 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if ((Time_Left.game_time > 0) && !Pause.IsPause)
+        if ((Time_Left.game_time > 1f) && !Pause.IsPause)
             Score_Text.text = "SCORE: " + score.ToString();
-        else if((Time_Left.game_time < 0))
+        else if ((Time_Left.game_time < 1f))
+        {
+            Final_score.Show_Score();
             this.gameObject.SetActive(false);
+        }
     }
 }

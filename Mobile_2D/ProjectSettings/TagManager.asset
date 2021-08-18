@@ -12,6 +12,8 @@ TagManager:
   - Bottom
   - Right
   - Left
+  - Pause
+  - Blackhole
   layers:
   - Default
   - TransparentFX

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Right_Bottom_action : MonoBehaviour
+public class Right_Bottom_action : Special_Collider_Action
 {
-    void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerStay2D(Collider2D other)
     {
-            if (other.gameObject.tag == "Right")
-                Special_Target_Action.Des.x = transform.parent.gameObject.transform.position.x - 0.5f;
-            if (other.gameObject.tag == "Bottom")
-                Special_Target_Action.Des.y = transform.parent.gameObject.transform.position.y + 0.5f;
+        if (other.gameObject.tag == "Right")
+            Special_Target_Action.Des.x = transform.parent.gameObject.transform.position.x - Reverse_Distance;
+        if (other.gameObject.tag == "Bottom")
+            Special_Target_Action.Des.y = transform.parent.gameObject.transform.position.y + Reverse_Distance;
     }
-    void OnMouseDown()
+    protected override void OnMouseDown()
     {
-        if(!Pause.IsPause && !Special_Target_Action.InCorner)
-            Special_Target_Action.Des = transform.parent.gameObject.transform.position + new Vector3(-1.5f, 1.5f, 0);
+        Clicked_Sound.Play();
+        if (!Pause.IsPause && TimeManager.time_flow)
+            Special_Target_Action.Des = transform.parent.gameObject.transform.position + To_Left_Top;
     }
 }
