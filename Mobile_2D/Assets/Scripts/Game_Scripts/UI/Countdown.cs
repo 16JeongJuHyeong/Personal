@@ -13,17 +13,18 @@ public class Countdown : MonoBehaviour
 
     void Count_Over()
     {
-        if (!Background_Music.isPlaying && Pause.IsPause)
+        if (!Background_Music.isPlaying && !TimeManager.IsBonus)
             Background_Music.Play();
-        if (!Bonus_Music.isPlaying && Spawner.IsBonus)
+        if (!Bonus_Music.isPlaying && TimeManager.IsBonus)
             Bonus_Music.Play();
 
         Pause_Button.GetComponent<BoxCollider2D>().enabled = true;
 
-        if (!Spawner.IsBonus)
+        if (!TimeManager.IsBonus)
             TimeManager.time_flow = true;
         this.gameObject.SetActive(false);
-        Pause.IsPause = false;
+        Time.timeScale = 1f;
+        //TimeManager.IsPause = false;
     }
 
     void Sound_Effect()

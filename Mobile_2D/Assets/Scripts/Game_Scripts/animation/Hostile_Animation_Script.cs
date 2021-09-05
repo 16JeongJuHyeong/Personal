@@ -18,7 +18,7 @@ public class Hostile_Animation_Script : MonoBehaviour
 
     void Shake_Start()
     {
-        if (!Pause.IsPause && !Spawner.IsBonus)
+        if (!TimeManager.IsBonus)
             animator.SetBool("shake", true);
     }
 

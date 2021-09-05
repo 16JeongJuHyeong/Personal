@@ -5,32 +5,31 @@ using UnityEngine;
 public class Target_Hostile_byClass : Target_byClass
 {
     public Spawner Hostile_Spawn;
+    private float Hostile_Control;
     void Start()
     {
         Hostile_Spawn = GameObject.Find("Spawner").GetComponent<Spawner>();
-        Hostile_Spawn.Hostile_Is_In_Game = true;
-        Moving_Speed = 0.001f;
+        Moving_Speed = 0.005f;
     }
 
     protected override void OnMouseDown()
     {
-        if (!Spawner.IsBonus && !Pause.IsPause)
+        if(Time.timeScale > 0f && TimeManager.time_flow)
         {
             Hostile_Spawn.Hostile_Is_In_Game = false;
             Destroy(this.gameObject);
-            score.score -= 30;
+            Score.score -= 30;
         }
     }
 
     protected override void Moving()
     {
+        Hostile_Control = (TimeManager.time_flow ? 1f : 0) * (Time.timeScale > 0f ? 1f : 0);
         if (target_body.isVisible)
         {
-            transform.position = transform.position + (Moving_Direction * Moving_Speed * Targets_Stop);
-            transform.Rotate(0, 0, Rotate_speed * (!Pause.IsPause ? 1 : 0) * (TimeManager.time_flow ? 1 : 0));
-
+            transform.position = transform.position + (Moving_Direction * Moving_Speed * Hostile_Control);
+            transform.Rotate(0, 0, Rotate_speed * Hostile_Control);
             //*Rotate(x,y,z) 각 좌표계에 x,y,z만큼 더함
-            //*transform.rotation = transform.rotation + Quaternion.Euler(0,0,Time.deltaTime * (!Pause.IsPause ? 1 : 0) * TimeManager.time_flow); 는 안됨
         }
         else
         {

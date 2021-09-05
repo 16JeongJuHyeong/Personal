@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private Text Score_Text;
     [SerializeField] private Final_Score Final_score;
-    public int score;
+    public static int score;
     
     void Start()
     {
@@ -16,12 +16,9 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if ((Time_Left.game_time > 1f) && !Pause.IsPause)
+        if (Time.timeScale>0f)
             Score_Text.text = "SCORE: " + score.ToString();
-        else if ((Time_Left.game_time < 1f))
-        {
-            Final_score.Show_Score();
+        else if ((TimeManager.game_time < 1f))
             this.gameObject.SetActive(false);
-        }
     }
 }

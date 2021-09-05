@@ -7,11 +7,12 @@ public class Resume : MonoBehaviour
 {
     [SerializeField] private AudioSource UI_Click_Sound;
     [SerializeField] private GameObject Countdown;
+    [SerializeField] private GameObject Pause_UI;
 
     public void Set_Resume()
     {
         UI_Click_Sound.Play();
-        this.transform.parent.gameObject.SetActive(false);
+        Pause_UI.SetActive(false);
         Countdown.SetActive(true);
     }
 }

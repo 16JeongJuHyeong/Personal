@@ -9,7 +9,7 @@ public class Click_Sound : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            if(TimeManager.time_flow && !Pause.IsPause )
+            if(TimeManager.time_flow && Time.timeScale > 0f)
                 Sound.Play();
     }
 }

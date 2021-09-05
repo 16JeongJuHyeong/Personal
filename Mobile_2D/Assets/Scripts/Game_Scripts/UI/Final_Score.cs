@@ -6,15 +6,9 @@ using UnityEngine.UI;
 public class Final_Score : MonoBehaviour
 {
     [SerializeField] private Text Final_Score_Text;
-    [SerializeField] private Score score;
 
-    public void Show_Score()
+    void Update()
     {
-        Final_Score_Text.text = "SCORE: " + score.score.ToString();
+        Final_Score_Text.text = "SCORE: " + Score.score.ToString();
     }
-
-    //void Update()
-    //{
-    //    Final_Score_Text.text = "SCORE: " + score.score.ToString();
-    //}
 }
