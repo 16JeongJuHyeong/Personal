@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Special_Collider_Action : MonoBehaviour
+public abstract class Special_Collider_Action : MonoBehaviour
 {
     protected AudioSource Clicked_Sound;
     protected Transform Special;
@@ -20,9 +20,9 @@ public class Special_Collider_Action : MonoBehaviour
     //상속해줌으로써 매번 변수를 선언할 필요 없게 한다 ->재사용
 
 
-    protected virtual void OnTriggerStay2D(Collider2D other) { }
-    protected virtual void OnMouseDown() { }
-    //Special Target의 부분(자식)마다 기능이 달라서 아래에서 정의
+    protected abstract void OnTriggerStay2D(Collider2D other);
+    protected abstract void OnMouseDown();
+    //Special Target의 자식 오브젝트마다 기능이 달라서 아래에서 정의
     void Start()
     {
         Clicked_Sound = GameObject.Find("Clicked_Sound").GetComponent<AudioSource>();

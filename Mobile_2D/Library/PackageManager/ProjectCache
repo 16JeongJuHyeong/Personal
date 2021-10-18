@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637653967431507690
-    m_Hash: 3488104385
+      ticks: 637663588540000000
+    m_Hash: 1755350565
   m_LockFileStatus:
     m_FilePath: C:/Users/JJH/Desktop/Personal/Mobile_2D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637653967431517664
-    m_Hash: 2463729786
+      ticks: 637663588540000000
+    m_Hash: 1487807332
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -78,6 +78,7 @@ m_PackageAssets:
         - 3.2.6
         - 3.2.9
         - 3.2.10
+        - 3.2.11
         - 4.0.0
         - 4.0.1
         - 4.1.0
@@ -97,6 +98,7 @@ m_PackageAssets:
         - 5.0.5
         - 5.0.6
         - 5.0.7
+        - 5.0.8
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -105,6 +107,7 @@ m_PackageAssets:
         - 6.0.5
         - 7.0.0-pre.2
         - 7.0.0-pre.3
+        - 7.0.0
         compatible:
         - 4.2.6
         - 4.2.8
@@ -291,6 +294,7 @@ m_PackageAssets:
         - 4.0.1
         - 4.0.2
         - 4.1.0
+        - 4.1.1
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
@@ -299,6 +303,7 @@ m_PackageAssets:
         - 6.0.0-pre.2
         - 6.0.0-pre.3
         - 6.0.0-pre.4
+        - 6.0.0
         compatible:
         - 3.1.6
         - 3.1.7
@@ -459,6 +464,7 @@ m_PackageAssets:
         - 3.0.14
         - 3.0.15
         - 3.0.16
+        - 3.0.17
         - 4.0.0
         - 4.0.1
         - 4.0.2
@@ -477,12 +483,14 @@ m_PackageAssets:
         - 5.1.2
         - 5.1.3
         - 5.1.4
+        - 5.1.5
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
         - 6.0.1
         - 7.0.0-pre.2
         - 7.0.0-pre.3
+        - 7.0.0
         compatible:
         - 4.1.4
         - 4.1.5
@@ -639,6 +647,10 @@ m_PackageAssets:
         - 1.7.1
         - 1.8.0
         - 1.9.0
+        - 1.10.2
+        - 1.11.2
+        - 1.12.5
+        - 1.13.5
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -654,6 +666,8 @@ m_PackageAssets:
         - 1.4.9
         - 1.6.0
         - 1.8.0
+        - 1.10.2
+        - 1.12.5
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -915,6 +929,7 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
+        - 1.2.4
         compatible:
         - 1.0.2
         - 1.0.3
@@ -927,7 +942,8 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
-        verified: 1.2.3
+        - 1.2.4
+        verified: 1.2.4
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -1195,6 +1211,7 @@ m_PackageAssets:
         - 1.1.24
         - 1.1.26
         - 1.1.27
+        - 1.1.29
         compatible:
         - 1.1.18
         - 1.1.19
@@ -1203,7 +1220,8 @@ m_PackageAssets:
         - 1.1.24
         - 1.1.26
         - 1.1.27
-        verified: 1.1.27
+        - 1.1.29
+        verified: 1.1.29
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
